@@ -28,7 +28,7 @@ const DisplayData = () => {
     container.innerHTML = ""
 
     if (questionCount < questions.length) {
-        var questDiv = document.createElement("div").setAttribute("id", "question")
+        let questDiv = document.createElement("div").setAttribute("id", "question")
         let header = document.createElement("h2")
         header.innerHTML = `Question ${questionCount + 1} :`
         container.append(header)
@@ -44,6 +44,23 @@ const DisplayData = () => {
 
 
     }
+    if(questionCount === questions.length -1){
+        document.getElementById("next").remove()
+        document.getElementById("skip").remove()
+
+        let btn = document.createElement("button")
+                    
+        btn.innerText = "Submit & show Result"
+        btn.addEventListener("click", handleSubmit)
+        
+        container.append(btn)
+    } 
+
+}
+
+
+const handleSubmit = ()=>{
+    localStorage.setItem("result", JSON.stringify())
 }
 
 const createQuestion = (index) => {
@@ -80,11 +97,12 @@ const handleNext = () => {
 
     selectedAnswers.push(ans);
     
+    
     questionCount++;
     if(questionCount === questions.length-1){
         document.getElementById("skip").setAttribute("disabled", "true")
     }
-    
+
     DisplayData()
     console.log(selectedAnswers)
 }
