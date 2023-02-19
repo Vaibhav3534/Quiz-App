@@ -62,7 +62,7 @@ const DisplayData = () => {
 const handleSubmit = ()=>{
     
     localStorage.setItem("result", JSON.stringify(selectedAnswers))
-    window.location.replace("./ReportCard.html")
+    window.location.assign("./ReportCard.html")
 }
 
 const createQuestion = (index) => {
@@ -98,6 +98,7 @@ const handleNext = () => {
     console.log(input.value)
     let ans = {
         question: questions[questionCount].question,
+        choices: questions[questionCount].choices,
         choiceMarked: input.value,
         correctAnswer: questions[questionCount].correctAnswer
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,28 @@
     <link rel="stylesheet" href="./Styles/Login.css">
     <title>Login</title>
 </head>
+
 <body>
+    <div class="navbar">
+        <h2 >Welcome to Quiz App</h2>
+    </div>
     <div id="container">
         <h1>Login</h1>
         <div>
-    <form id="form" class="form" onsubmit="handleLogin(event)">
-     
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
+            <form id="form" class="form" onsubmit="handleLogin(event)">
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
 
-      <input type="submit" value="Login">
-    </form>
-</div>
-    <div><a href="./Pages/Signup.html" rel="noopener noreferrer">Create account</a></div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div><a href="./Pages/Signup.html" rel="noopener noreferrer">Create account</a></div>
     </div>
 </body>
 <script src="./Js/index.js"></script>
+
 </html>
