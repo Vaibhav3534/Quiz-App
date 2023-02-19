@@ -16,7 +16,7 @@ const handleLogin = (event)=>{
             return alert("Wrong Password")
         }
         alert("Login successfull")
-        return window.location.replace("./index.html")
+        return window.location.replace("./Pages/Quiz.html")
 
     } catch (error) {
         console.log(error)

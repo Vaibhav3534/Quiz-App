@@ -1,17 +1,10 @@
 
-// const users = []
-
-let form = document.getElementById("form")
-
-
-
-
-
 const handleSubmit = (event) => {
 
     event.preventDefault()
 
-    let username = document.getElementById("username").value
+    let first_name = document.getElementById("first_name").value
+    let last_name = document.getElementById("last_name").value
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
     let confirm_password = document.getElementById("confirm_password").value
@@ -27,14 +20,16 @@ const handleSubmit = (event) => {
         return alert("Already registered")
     }
 
+    if(password.length < 6){
+        return alert("Password must be min 6")
+    }
     if (password != confirm_password) {
         return alert("Password don't match")
     }
 
-    // console.log(username)
-    // console.log(users)
     let user = {
-        username: username,
+        first_name:first_name,
+        last_name:last_name,
         email: email,
         password: password,
     }

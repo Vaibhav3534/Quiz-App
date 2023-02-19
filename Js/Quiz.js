@@ -60,7 +60,8 @@ const DisplayData = () => {
 
 
 const handleSubmit = ()=>{
-    localStorage.setItem("result", JSON.stringify())
+    
+    localStorage.setItem("result", JSON.stringify(selectedAnswers))
 }
 
 const createQuestion = (index) => {
@@ -87,16 +88,21 @@ const selectAnswer = (index) => {
 }
 
 const handleNext = () => {
-    console.log("clicked next")
+    // console.log("clicked next")
 
+    let input = document.querySelector(`input[name="answer"]:checked`)
+    if(input === null){
+        return alert("Please select answer")
+    }
+    console.log(input.value)
     let ans = {
         question: questions[questionCount].question,
-        choiceMarked: "",
+        choiceMarked: input.value,
         correctAnswer: questions[questionCount].correctAnswer
     }
 
     selectedAnswers.push(ans);
-    
+    console.log(selectedAnswers)
     
     questionCount++;
     if(questionCount === questions.length-1){
