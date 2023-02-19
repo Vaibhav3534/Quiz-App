@@ -62,6 +62,7 @@ const DisplayData = () => {
 const handleSubmit = ()=>{
     
     localStorage.setItem("result", JSON.stringify(selectedAnswers))
+    window.location.replace("./ReportCard.html")
 }
 
 const createQuestion = (index) => {
